@@ -2,14 +2,14 @@ function cookieTest()
 {
 	console.log("pressed");
 	var name = document.getElementById("name").value;
-	if(Cookies.get(name)==undefined)
+	if(Cookies.get(name)==undefined && name!="")
 	{
 		Cookies.set(name,name);
 		console.log("cookie made");
 		document.getElementById("clickMe").value="click for a cool show";
 		document.getElementById("intro").innerHTML = "account made";
 	}
-	else
+	else if(Cookies.get(name))
 	{
 		var x =("hello "+Cookies.get(name) );
 		document.getElementById("intro").innerHTML = x;
@@ -31,6 +31,5 @@ function cookieTest()
 		color += letters[Math.floor(Math.random() * 16)];
 	}
 	x=false;
-	Cookies.set("hit",1);
 	return color;
 }
