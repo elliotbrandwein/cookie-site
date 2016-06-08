@@ -6,12 +6,14 @@ function cookieTest()
 	{
 		Cookies.set(name,name);
 		console.log("cookie made");
+		document.getElementById("clickMe").value="click for a cool show";
+		document.getElementById("intro").innerHTML = "account made";
 	}
 	else
 	{
 		var x =("hello "+Cookies.get(name) );
 		document.getElementById("intro").innerHTML = x;
-		document.getElementById("clickMe").innerHTML="click for something fun";
+		document.getElementById("clickMe").value="enjoy";
 		setInterval(function()
 		{ 
 			$('body').css ("background-color",getRandomColor());
